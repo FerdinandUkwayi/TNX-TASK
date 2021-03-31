@@ -1,0 +1,208 @@
+*{
+    margin: 0px;
+}
+
+#wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "leftGrid rightGrid";
+    justify-content: center;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 5px;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: repeat(2, 48.5%);
+    grid-template-rows: 280px 350px;
+    width: 550px;
+    height: 550px;
+    grid-gap: 2%;
+    grid-template-areas: 
+        "coffee coffee"
+        "plant pinkhand"
+    ;     
+    grid-area: leftGrid; 
+}
+
+#container2{
+    display: grid;
+    grid-template-columns: repeat(2, 48.8%);
+    grid-template-rows: 350px 280px;
+    width: 550px;
+    height: 550px;
+    grid-gap: 2%;
+    grid-template-areas: 
+        "pinkhand plant"
+        "coffee coffee"
+    ;
+    grid-area: rightGrid;
+}
+
+.div-img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    box-shadow: 1px 3px 3px 1px grey;
+    
+}
+
+.containerItem1, .container2Item1{
+    grid-area: coffee;
+}
+
+.conatinerItem2, .container2Item1{
+    grid-area: plant;
+}
+
+.containerItem3, .container2Item1{
+    grid-area: pinkhand;
+}
+
+.title{
+    position: absolute;
+    z-index: 1;
+    top: 1%;
+    left: 1%;
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.desc{
+    position: absolute;
+    z-index: 1;
+    top: 4%;
+    left: 1%;
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 768px){
+    #wrapper{
+        display: block;
+    }
+
+    #container{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 350px);
+        width: 100%;
+        height: 100%;
+        row-gap: 2%;
+        grid-template-areas: 
+            "coffee "
+            "plant"
+            "pinkhand";
+        position: relative;
+    }
+
+    #container2{
+        display: grid;;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 350px);
+        width: 100%;
+        height: 100%;
+        row-gap: 2%;
+        grid-template-areas: 
+            "pinkhand"
+            "plant"
+            "coffee";
+        position: relative;
+        top: 520px;
+        
+    }
+
+    .div-img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .containerItem1, .container2Item1{
+        grid-area: coffee;
+    }
+    
+    .conatinerItem2, .conatiner2Item2{
+        grid-area: plant;
+    }
+
+    .containerItem3, .container2Item3{
+        grid-area: pinkhand;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    #wrapper{
+        display: grid;
+        grid-template-columns: repeat(1fr 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+            "leftGrid rightGrid";
+        column-gap: 30px;
+        width: 90%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 10px 0px 10px 0px;
+        
+    }
+
+    #container{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 300px);
+        width: 100%;
+        height: 100%;
+        row-gap: 2%;
+        grid-template-areas: 
+            "coffee"
+            "plant"
+            "pinkhand";
+            
+        float: left;
+    }
+
+    #container2{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 300px);
+        width: 100%;
+        height: 100%;
+        row-gap: 2%;
+        grid-template-areas: 
+            "coffee"
+            "plant"
+            "pinkhand";
+        float: right;
+    }
+
+    .div-img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%
+    }
+
+    .containerItem1, .container2Item1{
+        grid-area: coffee;
+    }
+    
+    .conatinerItem2, .container2Item2{
+        grid-area: plant;
+    }
+
+    .containerItem3, .container2Item3{
+        grid-area: pinkhand;
+    }
+}
